@@ -1,7 +1,7 @@
 local CFG = {
-	Name = "XENO",
-	Version = "4.5.0",
-	Prefix = ";",
+	Name = "zukv2",
+	Version = "1.3.37",
+	Prefix = ".",
 	ToggleKey = Enum.KeyCode.RightShift,
 	FireDelay = 0.025,
 	FireJitter = 0.015,
@@ -3869,7 +3869,7 @@ do
 	task.wait(0.6)
 	switchTab("Dashboard")
 	local profile = AC:detectGame()
-	Notify("⚡ XENO v" .. CFG.Version .. " loaded", T.Primary)
+	Notify("zukv2 v" .. CFG.Version .. " loaded", T.Primary)
 	Notify(" AC: " .. profile.name .. " — 10-Layer Venv + Kick-Safe Scan", T.OK)
 	Notify(
 		#BD.patterns .. " patterns · " .. #BD.fingerprints .. " fps · " .. #BD.remoteBlacklist .. " blacklisted",
@@ -3879,16 +3879,14 @@ do
 	statusValLbl.Text = "Ready"
 	statusValLbl.TextColor3 = T.Sub
 	print(string.format(
-		[[
-    ═══════════════════════════════════════
-     ⚡ XENO v%s — Kick-Safe Build
+ [[
+     zukv2 v%s
      AC Profile: %s
      10-Layer Venv + Scan Shield
      Patterns: %d · Fingerprints: %d
      Blacklisted: %d keywords
      Toggle: RightShift | Prefix: %s
-    ═══════════════════════════════════════
-    ]],
+ ]],
 		CFG.Version,
 		profile.name,
 		#BD.patterns,
