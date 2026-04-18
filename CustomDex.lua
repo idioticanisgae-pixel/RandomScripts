@@ -28452,21 +28452,22 @@ return search]==]
 
 				if ZukDecompile and okBC and bytecode and bytecode ~= "" then
 					local opts = {
-						DecompilerMode = "disasm",
-						DecompilerTimeout = 20,
-						ReaderFloatPrecision = 7,
-						CleanMode = true,
-						ShowDebugInformation = false,
-						ShowTrivialOperations = false,
-						ShowInstructionLines = false,
-						ShowOperationIndex = false,
-						ShowOperationNames = false,
-						ListUsedGlobals = false,
-						UseTypeInfo = false,
-						EnabledRemarks = { ColdRemark = false, InlineRemark = false },
-						ReturnElapsedTime = false,
-						prettyPrint = true,
+
+                            EnabledRemarks       = {ColdRemark=false, InlineRemark=true},
+	                            DecompilerTimeout    = 10,
+	                              DecompilerMode       = "disasm",
+	                               ReaderFloatPrecision = 7,
+	                                ShowDebugInformation = true,
+	                                  ShowInstructionLines = false,
+	                                   ShowOperationIndex   = false,
+	                                    ShowOperationNames   = false,
+	                                    ShowTrivialOperations= true,
+	                                      UseTypeInfo          = true,
+	                                      ListUsedGlobals      = true,
+	                                      ReturnElapsedTime    = true,
+	                                       CleanMode            = false,
 					}
+
 					local okD, result = pcall(ZukDecompile, bytecode, opts)
 
 					local isValidResult = okD
